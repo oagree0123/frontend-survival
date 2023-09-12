@@ -4,5 +4,5 @@
 
 ## 프론트엔드 개발 환경
 
-* [개발 환경 세팅하기](BASIC.md)
-  * [개발 환경 세팅하기](SETTING.md)
+* [개발 환경 세팅하기](/setting/BASIC.md)
+  * [개발 환경 세팅하기](/setting/SETTING.md)
