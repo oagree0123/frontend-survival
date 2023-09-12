@@ -204,6 +204,10 @@ function identity(arg: any): any {
 
 // 제네릭 타입
 function identity<Type>(arg: Type): Type {
+  console.log(typeof(arg));
   return arg;
 }
+identify('hello') 
+// string
+// 'hello'
 ```
