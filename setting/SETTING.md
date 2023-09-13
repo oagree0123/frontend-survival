@@ -1,5 +1,16 @@
 # 프로젝트 세팅하기
-## Node.js 버전
+## Node.js
+
+### Node.js 란?
+
+- Node.js는 Chrome V8 JavaScript 엔진으로 빌드 된 JavaScript 런타임
+- 다양한 자바스크립트 애플리케이션을 실행할 수 있으며, 서버를 실행하는 데 제일 많이 사용
+- 내장 HTTP 서버 라이브러리를 포함하고 있어 웹 서버에서 아파치 등의 별도 소프트웨어 없이 동작하는 것이 가능
+
+> 런타임은 프로그래밍 언어가 구동되는 환경이다. 즉 어떤 프로그램이 동작할 때, 프로그램이 동작하는 장소
+
+### Node.js의 버전
+
 - LTS (Long-Term Support)
   - 장기 지원 버전
   - 안정 적으로 사용할 수 있음   
@@ -13,6 +24,8 @@
 
 #### 1. WSL
   ```sh
+  wsl --install
+
   sudo apt update
   sudo apt upgrade
   ```
@@ -54,6 +67,7 @@ npm i -D typescript
 ```sh
 npx tsc --init
 ```
+- tsconfig.json 파일로 설정
 
 ### 3.lint
 
@@ -63,8 +77,8 @@ npx tsc --init
 ```sh
 npm i -D eslint
 ```
-
-> .eslintignore
+- .eslintrc.js 파일을 생성 후 설정 
+- .eslintignore 파일 생성 후 설정
 
 ### 4. 리액트 설치
 ```sh
@@ -75,6 +89,39 @@ npm i -D @types/react @types/react-dom
 ### 5. 테스팅 라이브러리
 ```sh
 npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom  @testing-library/react @testing-library/jest-dom
+```
+
+- jest.config.js 파일 설정
+  - 테스트에서 SWC 사용
+
+```javascript
+module.exports = {
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: [
+    '@testing-library/jest-dom/extend-expect',
+    './jest.setup',
+  ],
+  transform: {
+    '^.+\\.(t|j)sx?$': ['@swc/jest', {
+      jsc: {
+        parser: {
+          syntax: 'typescript',
+          jsx: true,
+          decorators: true,
+        },
+        transform: {
+          react: {
+            runtime: 'automatic',
+          },
+        },
+      },
+    }],
+  },
+  testPathIgnorePatterns: [
+    '<rootDir>/node_modules/',
+    '<rootDir>/dist/',
+  ],
+};
 ```
 
 ### 6. parcel

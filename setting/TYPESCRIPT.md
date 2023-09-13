@@ -67,7 +67,9 @@ let pair: [string, number]; pair = ['hp', 100];
 ```
 
 #### 타입 추론
+
 직접 타입을 정해주지 않아도 자동으로 타입을 추론해서 지정해주는 것
+
 ```typescript
 let name = '홍길동'
 typeof(name) // string
@@ -113,6 +115,7 @@ type Human = {
   age?: number;
 };
 
+// age 유무에 따른 return
 function greeting({ name, age }: Human): string {
   return age ? `${name} (${age})` : name;
 }
