@@ -20,11 +20,13 @@
 - Blue 단계에서는 중복 코드 제거, 일반화 등의 리팩토링을 수행한다.
 
 ### TDD 장점
+
 1. 코드 작성 전 셀계에 대해서 구체적인 작성 가능
 2. 오류에 대한 파악이 빨라 디버깅 시간 단축
 3. 문서의 대체 가능
 
 ### TDD 단점
+
 1. 단기적으로 시간 소모가 큼
 2. 100%의 안정성을 보장하는 것은 아님
 
@@ -34,6 +36,7 @@
 - Given - When -Then 세가지로 테스트를 진행
 
 ### Given-When-Then
+
 Given - 시나리오 상에서 주어진 환경을 정의합니다.
 When - 사용자가 어떤 행위를 하는 것을 정의합니다.
 Then - 그에 따른 어떠한 결과를 정의합니다.
@@ -69,13 +72,13 @@ test('add', () => {
 
 // BDD 스타일의 테스트
 describe('add 함수', () => {
-	it('returns sum of two numbers', () => {
-		expect(add(1, 2)).toBe(3);
-	});
+  it('returns sum of two numbers', () => {
+    expect(add(1, 2)).toBe(3);
+  });
 
-	it('returns numbers', () => {
-		expect(typeof add(1, 2)).toBe('number');
-	});
+  it('returns numbers', () => {
+    expect(typeof add(1, 2)).toBe('number');
+  });
 });
 ```
 
@@ -89,11 +92,11 @@ describe('add 함수', () => {
 ```typescript
 // Greeting 컴포넌트의 텍스트 유무 테스트
 test('Greeting', () => {
-	render(<Greeting name="world" />);
+  render(<Greeting name="world" />);
 
-	screen.getByText('Hello, world!');
-	screen.getByText(/Hello/);
+  screen.getByText('Hello, world!');
+  screen.getByText(/Hello/);
 
-	expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
+  expect(screen.queryByText(/Hi/)).not.toBeInTheDocument();
 });
 ```

@@ -9,6 +9,7 @@ npx ts-node
 ```
 
 ## 타입 지정
+
 ```typescript
 let name: string;
 name = '홍길동'; 
@@ -25,6 +26,7 @@ hunman = { name: '홍길동', age: 20, hp: 100 }; // error : 타입 지정 이�
 ```
 
 ### 타입 지정하는 다양한 방법
+
 ```typescript
 // type
 type Human = {
@@ -44,7 +46,7 @@ interface Person {
 let girl: Human;
 girl = { name: '하니', age: 20 };
 
-// function 
+// function
 // function func(매개변수: 매개변수 타입): 반환 타입 { return; }
 function add(x: number, y: number): number {
   return x + y;
@@ -92,8 +94,7 @@ function fetchProducts({ category }: { category: Category }) {
 }
 ```
 
->타입스크립트의 장점으로는 타입을 지정함에 따라 자동 완성이나 타입에 따른 메소드를 자동으로 보여주는 것이 있다. 
-
+>타입스크립트의 장점으로는 타입을 지정함에 따라 자동 완성이나 타입에 따른 메소드를 자동으로 보여주는 것이 있다.
 
 #### Optional Parameter
 
@@ -122,6 +123,7 @@ function greeting({ name, age }: Human): string {
 ```
 
 #### 확장하기
+
 ```typescript
 type Human = {
   name: string;
@@ -146,6 +148,7 @@ interface가 가지는 대부분의 기능은 type에서도 사용할 수 있습
 인터페이스 경우 항상 확장될 수 있습니다.
 
 #### 확장하기
+
 ```typescript
 // interface
 interface Animal {
@@ -175,6 +178,7 @@ bear.honey;
 ```
 
 #### 새 필드 추가하기
+
 ```typescript
 // interface
 interface Window {
@@ -200,6 +204,7 @@ type Window = {
 ```
 
 ### Generic 타입
+
 ```typescript
 function identity(arg: any): any {
   return arg;
@@ -210,7 +215,7 @@ function identity<Type>(arg: Type): Type {
   console.log(typeof(arg));
   return arg;
 }
-identify('hello') 
+identify('hello')
 // string
 // 'hello'
 ```

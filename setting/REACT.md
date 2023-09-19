@@ -3,6 +3,7 @@
 - 사용자 인터페이스를 만들기 위한 JavaScript 라이브러리
 
 ## 리액트 공식문서
+
 - [React 공식문서](https://ko.legacy.reactjs.org/)
   - 옛날 문서이지만, 조금씩 업데이트
 - [React Beta 문서](https://react.dev/)
@@ -11,34 +12,35 @@
 ## 렌더링
 
 ### 웹에서 렌더링이란?
+
 - 웹 개발에서의 렌더링은 웹 페이지가 브라우저에서 어떻게 표시되는지 나타내는 것
 
 - 웹 페이지를 브라우저에 표시하기 위해서는 HTML, CSS 및 JavaScript와 같은 웹 기술을 사용하여 컨텐츠와 디자인을 결합하고, 브라우저에서 이를 해석하여 화면에 보여주어야 합니다. 이 과정은 브라우저가 웹 페이지를 "렌더링"하는 것입니다.
 
 ```tsx
 function Demo({ count }: { count: number }) {
-	return <p>Demo: {count}</p>;
+  return <p>Demo: {count}</p>;
 }
 
 function main() {
-	const element = document.getElementById('root');
-	const element2 = document.getElementById('demo');
+  const element = document.getElementById('root');
+  const element2 = document.getElementById('demo');
 
-	if (!element || !element2) {
-		return;
-	}
+  if (!element || !element2) {
+  return;
+  }
 
-	const root = ReactDOM.createRoot(element);
-	const root2 = ReactDOM.createRoot(element2);
+  const root = ReactDOM.createRoot(element);
+  const root2 = ReactDOM.createRoot(element2);
 
-	root.render(<App />);
+  root.render(<App />);
 
   // count 값이 바뀌는 부분만 업데이트
-	let count = 0;
-	setInterval(() => {
-		count += 1;
-		root2.render(<Demo count={count} />);
-	}, 1000);
+  let count = 0;
+  setInterval(() => {
+  count += 1;
+  root2.render(<Demo count={count} />);
+  }, 1000);
 }
 ```
 
@@ -94,6 +96,7 @@ const App = () => {
 3. 실제 DOM에서 수정은 message를 표시한는 Title에서만 발생
 
 위 방식의 단점
+
 - React는 UI를 업데이트해야 하는지 여부를 확인하기 위해 각 컴포넌트에서 diffing 알고리즘을 실행
 - render 함수 또는 함수형 컴포넌트의 모든 코드가 재실행
 
@@ -109,8 +112,8 @@ const App = () => {
 2. 컴포넌트 속성(props) 변경: 부모 컴포넌트가 자식 컴포넌트에게 새로운 속성을 전달할 때, 자식 컴포넌트가 새로운 속성으로 다시 렌더링됩니다.
 
 3. 컴포넌트의 생명주기 메서드 호출: 컴포넌트의 생명주기 메서드 중 하나가 호출될 때(예: componentDidMount, componentDidUpdate), 해당 컴포넌트가 다시 렌더링됩니다.
-  <br>
-  3.1 클래스 컴포넌트에서 사용되는 메서드
+
+    3.1 클래스 컴포넌트에서 사용되는 메서드
 
 4. 컨텍스트(Context) 변경: React의 컨텍스트를 사용하여 데이터를 공유하는 경우, 컨텍스트 값이 변경될 때 관련된 컴포넌트가 다시 렌더링됩니다
 
@@ -129,6 +132,7 @@ function Decoration() {
 }
 export default React.memo(Decoration);
 ```
+
 ```jsx
 import React from "react";
 
@@ -145,6 +149,7 @@ function BigCountNumber({ count }) {
 
 export default React.memo(BigCountNumber);
 ```
+
 ```jsx
 function Counter() {
   const [count, setCount] = React.useState(0);
@@ -166,12 +171,13 @@ export default Counter;
 - 라이브러리와 프레임워크의 차이는 제어 흐름에 대한 주도성이 누구에게/어디에 있는가에 있음
 
 ### 라이브러리
- - 라이브러리를 사용하면 개발자가 코드의 흐름과 제어를 가짐
- - 라이브러리는 보통 특정 작업을 수행하기 위해 개발자가 코드를 호출
- - 라이브러리는 주로 특정 작업을 수행하기 위한 도구로 사용됩니다. 예를 들어, 데이터베이스 연결, HTTP 요청
 
- ### 프레임워크
-  - 프레임워크는 일반적으로 제어 흐름을 자체적으로 관리하며, 개발자는 프레임워크에서 제공하는 규칙과 지침을 따라야 함
-  - 프레임워크는 애플리케이션의 구조와 흐름을 정의하고, 개발자가 프레임워크에 따라 코드를 작성하도록 유도
-  - 프레임워크는 주로 애플리케이션의 구조와 아키텍처를 제공하며, 개발자가 프로젝트를 시작하는 데 필요한 기본 구성 요소를 정의
+- 라이브러리를 사용하면 개발자가 코드의 흐름과 제어를 가짐
+- 라이브러리는 보통 특정 작업을 수행하기 위해 개발자가 코드를 호출
+- 라이브러리는 주로 특정 작업을 수행하기 위한 도구로 사용됩니다. 예를 들어, 데이터베이스 연결, HTTP 요청
 
+### 프레임워크
+
+- 프레임워크는 일반적으로 제어 흐름을 자체적으로 관리하며, 개발자는 프레임워크에서 제공하는 규칙과 지침을 따라야 함
+- 프레임워크는 애플리케이션의 구조와 흐름을 정의하고, 개발자가 프레임워크에 따라 코드를 작성하도록 유도
+- 프레임워크는 주로 애플리케이션의 구조와 아키텍처를 제공하며, 개발자가 프로젝트를 시작하는 데 필요한 기본 구성 요소를 정의

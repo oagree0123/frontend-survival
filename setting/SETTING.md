@@ -1,4 +1,5 @@
 # 프로젝트 세팅하기
+
 ## Node.js
 
 ### Node.js 란?
@@ -13,16 +14,16 @@
 
 - LTS (Long-Term Support)
   - 장기 지원 버전
-  - 안정 적으로 사용할 수 있음   
+  - 안정 적으로 사용할 수 있음
 - 최선 버전
   - 불안정 할 수 있음
-<br>
 
 ### 윈도우에서 fnm 설치하기
 
 > fnm은 Node.js 버전 관리자
 
 #### 1. WSL
+
   ```sh
   wsl --install
 
@@ -31,29 +32,35 @@
   ```
 
 #### 2. Node.js와 npm 설치
+
   ```sh
   curl -fsSL https://fnm.vercel.app/install | bash
   ```
 
 #### 3. fnm 초기화
-  ```sh
-  echo 'eval "$(fnm env --multi)"' >> ~/.zshrc
-  ```
+
+```sh
+echo 'eval "$(fnm env --multi)"' >> ~/.zshrc
+```
 
 #### 4. fnm 으로 Node.js 설치
+
 ```sh
 fnm install {Node.js version}
 fnm install --lts
 ```
 
 ## 개발 환경 설정하기
+
 ### 1. 시작하기
+
 ```sh
 npm init
 npm init -y
 ```
 
 #### .gitignore 쉽게 만들기
+
 https://www.toptal.com/developers/gitignore/
 
 ### 2. 타입스크립트
@@ -63,10 +70,13 @@ https://www.toptal.com/developers/gitignore/
 ```sh
 npm i -D typescript
 ```
+
 #### 실행(컴파일)
+
 ```sh
 npx tsc --init
 ```
+
 - tsconfig.json 파일로 설정
 
 ### 3.lint
@@ -77,16 +87,19 @@ npx tsc --init
 ```sh
 npm i -D eslint
 ```
-- .eslintrc.js 파일을 생성 후 설정 
+
+- .eslintrc.js 파일을 생성 후 설정
 - .eslintignore 파일 생성 후 설정
 
 ### 4. 리액트 설치
+
 ```sh
 npm i react react-dom
 npm i -D @types/react @types/react-dom
 ```
 
 ### 5. 테스팅 라이브러리
+
 ```sh
 npm i -D jest @types/jest @swc/core @swc/jest jest-environment-jsdom  @testing-library/react @testing-library/jest-dom
 ```
@@ -129,6 +142,7 @@ module.exports = {
 parcel은 모듈 번들러이다.
 
 #### 모듈 번들러(bundler)란? 
+
 > 웹 애플리케이션을 구성하는 자원(HTML, CSS, Javscript, Images 등)을 모두 각각의 모듈로 보고 이를 조합해서 병합된 하나의 결과물을 만드는 도구
 
 ```sh
@@ -153,6 +167,7 @@ parcel로 웹 서버를 띄워주기 때문에 source 추가
 ```
 
 ### 8. 기본 파일 작성
+
 - `index.html`
 - `src/main.tsx`
 - `src/App.tsx`
@@ -161,7 +176,9 @@ parcel로 웹 서버를 띄워주기 때문에 source 추가
 - `src/components/Greeting.tsx`
 
 #### 기본 작성
+
 #### 1. index.html
+
 ```html
 <!-- index.html -->
 <!DOCTYPE html>
@@ -178,18 +195,19 @@ parcel로 웹 서버를 띄워주기 때문에 source 추가
 ```
 
 #### 2. main.tsx
+
 ```typescript
 import ReactDOM from 'react-dom/client';
 
 function App() {
-	return <p>Hello, World!</p>;
+  return <p>Hello, World!</p>;
 }
 
 const element = document.getElementById('root');
 
 if (element) {
-	const root = ReactDOM.createRoot(element);
+  const root = ReactDOM.createRoot(element);
 
-	root.render(<App />);
+  root.render(<App />);
 }
 ```
