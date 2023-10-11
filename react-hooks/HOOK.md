@@ -1,4 +1,4 @@
-# React Hooks
+# React Hook
 
 - React 16.8 버전에서 도입된 기능
 - 함수형 컴포넌트에서 상태(state)와 생명주기(lifecycle) 기능을 사용할 수 있게 해주는 API
