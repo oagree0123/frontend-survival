@@ -156,6 +156,11 @@ useEffect(() => {
 - API 등을 사용하면 이상하다고 느낄 수 있으니 참고할 것.
   - [예상치 못한 부작용 검사](https://ko.reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects)
 
+#### React StrictMode
+
+- React 애플리케이션에서 개발자에게 개선 사항 및 잠재적인 문제를 식별하고 경고해주는 도구
+- Strict Mode는 개발 환경에서만 활성화되며, 프로덕션 환경에서는 동작하지 않음
+
 ### 의존성 배열을 이용해 Fetch할 때 주의사항
 
 - fetch를 하던 중 데이터를 받아오는 것을 중단해야하는 경우 결과를 무시해야함
