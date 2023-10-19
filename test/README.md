@@ -9,3 +9,4 @@
 * [TDD](TDD.md)
 * [React Testing Library](RTL.md)
 * [MSW](MSW.md)
+* [Playwright](PLAYWRIGHT.md)
