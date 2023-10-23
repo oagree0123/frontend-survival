@@ -30,3 +30,6 @@
   * [React Testing Library](test/RTL.md)
   * [MSW](test/MSW.md)
   * [Playwright](test/PLAYWRIGHT.md)
+
+* [External Store](external-store/README.md)
+  * [External Store](external-store/EXTERNALSTORE.md)
