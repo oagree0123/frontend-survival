@@ -9,3 +9,4 @@
 * [External Store](EXTERNALSTORE.md)
 * [TSyringe](TSYRINGE.md)
 * [Redux](REDUX.md)
+* [usestore-ts](USESTORE.md)
