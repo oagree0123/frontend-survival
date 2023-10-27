@@ -33,3 +33,5 @@
 
 * [External Store](external-store/README.md)
   * [External Store](external-store/EXTERNALSTORE.md)
+  * [TSyringe](external-store/TSYRINGE.md)
+  * [Redux](external-store/REDUX.md)
