@@ -39,4 +39,4 @@
 
 * [React Router](router/README.md)
   * [Routing](router/ROUTING.md)
-  * [Routes](router/ROUTES.md)
+  * [React Router](router/ROUTES.md)
