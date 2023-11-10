@@ -47,3 +47,4 @@
   * [CSS in JS](cssinjs/CSSINJS.md)
   * [styled-components](cssinjs/STYLEDCOMPONENTS.md)
   * [Props & Attrs](cssinjs/PROPSATTRS.md)
+  * [Global Style & Theme](cssinjs/THEME.md)
