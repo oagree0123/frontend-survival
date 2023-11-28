@@ -10,4 +10,5 @@
 * [목록 보기](LIST.md)
 * [상품 상세 보기](DETAIL.md)
 * [장바구니](Cart.md)
-* [장바구니](LOGIN.md)
+* [로그인](LOGIN.md)
+* [주문하기](ORDER.md)
